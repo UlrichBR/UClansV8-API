@@ -8,6 +8,7 @@ import me.ulrich.clans.api.AddonAPIManager;
 import me.ulrich.clans.api.BossBarAPIManager;
 import me.ulrich.clans.api.ClaimAPIManager;
 import me.ulrich.clans.api.ClanAPIManager;
+import me.ulrich.clans.api.ColorAPIManager;
 import me.ulrich.clans.api.CommandAPIManager;
 import me.ulrich.clans.api.DiscordAPIManager;
 import me.ulrich.clans.api.EntityAPIManager;
@@ -66,6 +67,7 @@ public final class Clans extends JavaPlugin implements UClans{
 	private final GuiAPIManager guiAPI;
 	private RewardsAPIManager rewardsAPI;
 	private EntityAPIManager entityAPI;
+	private ColorAPIManager colorAPI;
 
 	public Clans() {
 		
@@ -91,6 +93,7 @@ public final class Clans extends JavaPlugin implements UClans{
 		this.guiAPI = new GuiAPIManager(this);
 		this.rewardsAPI = new RewardsAPIManager(this);
 		this.entityAPI = new EntityAPIManager(this);
+		this.colorAPI = null;
 
 	}
 	
@@ -239,6 +242,10 @@ public final class Clans extends JavaPlugin implements UClans{
 
 	public boolean isTitleAlerts() {
 		return title_alerts;
+	}
+	
+	public ColorAPIManager getColorAPI() {
+		return colorAPI;
 	}
 
 }
